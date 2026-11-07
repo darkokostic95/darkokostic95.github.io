@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DK Software · Websites and admin panels for businesses</title>
+<meta name="description" content="DK Software designs and builds websites and admin panels for cafés, restaurants, hotels, apartments, gyms and shops. Fast, mobile-friendly and set up for Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2313203B'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='28' fill='%23F4B400' text-anchor='middle'%3EDK%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"DK Software","founder":{"@type":"Person","name":"Darko Kostić","jobTitle":"Software Engineer"},"address":{"@type":"PostalAddress","addressLocality":"Niš","addressCountry":"RS"},"url":"https://darkokostic95.github.io/","description":"Websites and admin panels for small and medium businesses.","sameAs":["https://www.linkedin.com/in/darko-kostic/","https://www.upwork.com/freelancers/~01fcb256883c1a4938","https://www.fiverr.com/dar_ko_stic"]}
+</script>
+<style>
+  :root {
+    --ink: #13203B;
+    --ink-soft: #46516B;
+    --paper: #EEF1EC;
+    --card: #FFFFFF;
+    --cobalt: #2B4ACB;
+    --sun: #F4B400;
+    --mint: #BFDCC8;
+    --line: #D3D9D0;
+    --display: "Bricolage Grotesque", "Arial Narrow", sans-serif;
+    --body: "Atkinson Hyperlegible", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.6 var(--body); }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--cobalt); outline-offset: 3px; }
+  .wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+  h1, h2, h3 { font-family: var(--display); line-height: 1.02; margin: 0; letter-spacing: -0.015em; }
+  h2 { font-size: clamp(34px, 4.6vw, 58px); font-weight: 800; }
+  h3 { font-size: 24px; font-weight: 700; }
+  p { margin: 0 0 16px; }
+  .lead { font-size: 20px; color: var(--ink-soft); max-width: 60ch; }
+
+  /* header */
+  header.top { position: sticky; top: 0; z-index: 20; background: rgba(238,241,236,.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 800; font-size: 21px; }
+  .brand b { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 8px; background: var(--ink); color: var(--sun); font-size: 16px; }
+  nav.links a { text-decoration: none; font-weight: 700; margin-left: 26px; font-size: 16px; }
+  nav.links a:hover { color: var(--cobalt); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; font-size: 16px; border: 2px solid var(--ink); }
+  .btn.solid { background: var(--ink); color: #fff; }
+  .btn.solid:hover { background: var(--cobalt); border-color: var(--cobalt); }
+  .btn.ghost:hover { background: var(--ink); color: #fff; }
+
+  /* hero */
+  .hero { padding: 56px 0 0; overflow: hidden; }
+  .hero h1 { font-size: clamp(44px, 5.6vw, 80px); font-weight: 800; max-width: 15ch; }
+  .hero .row { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: end; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+
+  /* the street */
+  .street { margin-top: 48px; position: relative; }
+  .shops { display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; align-items: end; padding: 0 20px; max-width: 1400px; margin: 0 auto; }
+  .shop { text-decoration: none; display: flex; flex-direction: column; position: relative; }
+  .shop .sign { background: var(--ink); color: #fff; font-family: var(--display); font-weight: 700; font-size: 17px; text-align: center; padding: 9px 8px; border-radius: 6px 6px 0 0; }
+  .shop .awning { height: 30px; background: repeating-linear-gradient(90deg, var(--a1) 0 22px, var(--a2) 22px 44px); clip-path: polygon(0 0, 100% 0, 100% 70%, 95% 100%, 90% 70%, 85% 100%, 80% 70%, 75% 100%, 70% 70%, 65% 100%, 60% 70%, 55% 100%, 50% 70%, 45% 100%, 40% 70%, 35% 100%, 30% 70%, 25% 100%, 20% 70%, 15% 100%, 10% 70%, 5% 100%, 0 70%); }
+  .shop .window { background: #fff; border: 10px solid var(--frame); border-top-width: 6px; aspect-ratio: 4 / 3.4; overflow: hidden; position: relative; }
+  .shop .window img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s ease; }
+  .shop:hover .window img { transform: scale(1.04); }
+  .shop .tag { position: absolute; right: 10px; bottom: 10px; background: var(--sun); color: var(--ink); font-weight: 700; font-size: 13px; padding: 4px 10px; border-radius: 999px; }
+  .shop .base { height: 22px; background: var(--frame); }
+  .shop:nth-child(odd) { margin-bottom: 0; }
+  .shop:nth-child(2) .window, .shop:nth-child(4) .window { aspect-ratio: 4 / 3.9; }
+  .pavement { height: 46px; background: repeating-linear-gradient(90deg, #C9CFC6 0 2px, #DDE2DA 2px 120px); border-top: 6px solid #B9C0B5; }
+  .street-note { text-align: center; font-size: 15px; color: var(--ink-soft); padding: 14px 20px 0; }
+
+  section { padding: 96px 0; }
+  .head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 44px; flex-wrap: wrap; }
+  .head p { max-width: 46ch; color: var(--ink-soft); margin: 0; }
+
+  /* work */
+  .work { display: grid; gap: 28px; }
+  .case { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; background: var(--card); border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+  .case:nth-child(even) { grid-template-columns: 1fr 1.1fr; }
+  .case:nth-child(even) .shots { order: 2; }
+  .case .shots { background: var(--line); min-height: 100%; }
+  .case .shots img { width: 100%; height: 100%; object-fit: cover; object-position: top; aspect-ratio: 4 / 3; }
+  .case .body { padding: 36px 38px; display: flex; flex-direction: column; }
+  .case .kind { font-weight: 700; color: var(--cobalt); font-size: 15px; margin-bottom: 8px; }
+  .case h3 { font-size: clamp(26px, 2.6vw, 34px); margin-bottom: 14px; }
+  .case ul { padding-left: 20px; margin: 0 0 22px; color: var(--ink-soft); }
+  .case li { margin-bottom: 6px; }
+  .case .foot { margin-top: auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+  .case .note { font-size: 14px; color: var(--ink-soft); }
+  .pill { display: inline-block; background: var(--mint); font-size: 13px; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
+  .pill.real { background: var(--sun); }
+
+  /* services: price board */
+  .services { background: var(--ink); color: #fff; }
+  .services .head p { color: #B8C1D6; }
+  .board { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: #2A3858; border-radius: 14px; overflow: hidden; }
+  .svc { background: var(--ink); padding: 30px 26px; display: flex; flex-direction: column; }
+  .svc .price { font-family: var(--display); font-size: 40px; font-weight: 800; color: var(--sun); margin: 14px 0 4px; }
+  .svc .price small { font-size: 16px; color: #B8C1D6; font-weight: 500; }
+  .svc ul { padding-left: 18px; margin: 12px 0 0; color: #D4DAE8; font-size: 16px; }
+  .svc li { margin-bottom: 6px; }
+  .services .fine { color: #B8C1D6; font-size: 15px; margin-top: 18px; }
+
+  /* process */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: s; }
+  .step { border-top: 4px solid var(--ink); padding-top: 18px; }
+  .step::before { counter-increment: s; content: counter(s); font-family: var(--display); font-weight: 800; font-size: 56px; color: var(--cobalt); line-height: 1; display: block; margin-bottom: 10px; }
+  .step p { color: var(--ink-soft); margin: 10px 0 0; }
+
+  /* about */
+  .about .grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: start; }
+  .facts { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 8px 26px; }
+  .facts div { padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .facts div:last-child { border-bottom: 0; }
+  .facts dt { font-size: 14px; color: var(--ink-soft); }
+  .facts dd { margin: 2px 0 0; font-weight: 700; }
+  .facts dl { margin: 0; }
+
+  /* contact */
+  .contact { background: var(--sun); }
+  .contact .wrap { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center; }
+  .contact h2 { font-size: clamp(38px, 5.4vw, 70px); }
+  .contact .links { display: grid; gap: 12px; }
+  .contact .btn { justify-content: space-between; background: #fff; border-color: var(--ink); font-size: 18px; padding: 16px 24px; }
+  .contact .btn:hover { background: var(--ink); color: #fff; }
+  footer { background: var(--ink); color: #B8C1D6; font-size: 15px; padding: 28px 0; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  @media (max-width: 980px) {
+    nav.links { display: none; }
+    .hero .row, .about .grid, .contact .wrap { grid-template-columns: 1fr; gap: 28px; }
+    .shops { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 20px 6px; gap: 14px; }
+    .shop { flex: 0 0 64%; scroll-snap-align: center; }
+    .case, .case:nth-child(even) { grid-template-columns: 1fr; }
+    .case:nth-child(even) .shots { order: 0; }
+    .case .body { padding: 26px 22px; }
+    .board { grid-template-columns: 1fr 1fr; }
+    .steps { grid-template-columns: 1fr; }
+    section { padding: 72px 0; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 17px; }
+    .board { grid-template-columns: 1fr; }
+    .shop { flex-basis: 78%; }
+    header.top .btn { padding: 10px 16px; font-size: 15px; }
+    .hero { padding-top: 44px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>DK</b> DK Software</a>
+    <nav class="links" aria-label="Main">
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#process">How it works</a><a href="#about">About</a>
+    </nav>
+    <a class="btn solid" href="#contact">Start a project</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap row">
+      <h1>Websites that bring customers through the door.</h1>
+      <div>
+        <p class="lead">DK Software designs and builds websites and admin panels for cafés, restaurants, hotels, apartments, gyms, salons and shops. Fast, made for phones, and set up so people find you on Google.</p>
+        <div class="actions">
+          <a class="btn solid" href="#work">See the work</a>
+          <a class="btn ghost" href="#contact">Get a quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="street" aria-label="Five websites, shown as shop windows">
+      <div class="shops">
+        <a class="shop" href="https://darkokostic95.github.io/lantern-lime/" style="--a1:#2E5E4E;--a2:#EEF1EC;--frame:#2E5E4E">
+          <span class="sign">Café &amp; bar</span><span class="awning"></span>
+          <span class="window"><img src="img/lantern-1.jpg" alt="Lantern &amp; Lime café website, home page" width="1200" height="900"></span>
+          <span class="base"></span>
+        </a>
+        <a class="shop" href="https://darkokostic95.github.io/kamen-apartments/" style="--a1:#1F4E79;--a2:#F4F0E6;--frame:#1F4E79">
+          <span class="sign">Apartments</span><span class="awning"></span>
+          <span class="window"><img src="img/kamen-1.jpg" alt="Kamen Apartments website, home page" width="1200" height="900"></span>
+          <span class="base"></span>
+        </a>
+        <a class="shop" href="https://darkokostic95.github.io/david-kostic/" style="--a1:#2A1620;--a2:#E9DCC8;--frame:#2A1620">
+          <span class="sign">Bartender</span><span class="awning"></span>
+          <span class="window"><img src="img/david-1.jpg" alt="David Kostić bartender and barista website, home page" width="1200" height="900"><span class="tag">Live client</span></span>
+          <span class="base"></span>
+        </a>
+        <a class="shop" href="https://darkokostic95.github.io/kovacnica-gym/" style="--a1:#2347E0;--a2:#F2F2F2;--frame:#14161C">
+          <span class="sign">Gym</span><span class="awning"></span>
+          <span class="window"><img src="img/gym-1.jpg" alt="Kovačnica gym website, home page" width="1200" height="900"></span>
+          <span class="base"></span>
+        </a>
+        <a class="shop" href="https://darkokostic95.github.io/bor-lodge/" style="--a1:#8C2F25;--a2:#F3EEE6;--frame:#3B2A22">
+          <span class="sign">Mountain hotel</span><span class="awning"></span>
+          <span class="window"><img src="img/bor-1.jpg" alt="Bor Lodge mountain hotel website, home page" width="1200" height="900"></span>
+          <span class="base"></span>
+        </a>
+      </div>
+      <div class="pavement"></div>
+      <p class="street-note">Every window opens a live website. Tap one to look inside.</p>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="head">
+        <h2>Recent work</h2>
+        <p>One real client and four concept projects, each built around a different kind of business. Every site is live, so you can click through it on your phone.</p>
+      </div>
+      <div class="work">
+        <article class="case">
+          <div class="shots"><img src="img/david-1.jpg" alt="David Kostić website hero" width="1200" height="900" loading="lazy"></div>
+          <div class="body">
+            <span class="kind">Personal website · bartender &amp; barista</span>
+            <h3>David Kostić</h3>
+            <ul>
+              <li>Made to send to hotel and resort managers instead of a PDF CV</li>
+              <li>Work history shown as passport stamps, one per bar</li>
+              <li>17 real guest reviews from Tripadvisor and Google that mention him by name</li>
+              <li>Clear "hire me for the season" contact section</li>
+            </ul>
+            <div class="foot"><a class="btn solid" href="https://darkokostic95.github.io/david-kostic/">Open the site</a><span class="pill real">Live client</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="shots"><img src="img/lantern-1.jpg" alt="Lantern &amp; Lime home page" width="1200" height="900" loading="lazy"></div>
+          <div class="body">
+            <span class="kind">Café &amp; cocktail bar · website with owner panel</span>
+            <h3>Lantern &amp; Lime</h3>
+            <ul>
+              <li>Look, headline and menu switch automatically from day (coffee) to night (cocktails)</li>
+              <li>Owner panel: change prices, mark items sold out, edit opening hours</li>
+              <li>"Open now / closed" from the opening hours, table reservation form</li>
+            </ul>
+            <div class="foot"><a class="btn solid" href="https://darkokostic95.github.io/lantern-lime/">Open the site</a><span class="pill">Concept project</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="shots"><img src="img/kamen-1.jpg" alt="Kamen Apartments home page" width="1200" height="900" loading="lazy"></div>
+          <div class="body">
+            <span class="kind">Holiday apartments · direct bookings</span>
+            <h3>Kamen Apartments</h3>
+            <ul>
+              <li>Availability calendar per apartment with nightly prices and booked dates</li>
+              <li>Guests pick dates and instantly see the total: nights, cleaning and tourist tax</li>
+              <li>Booking requests go straight to the owner, with no platform fees</li>
+            </ul>
+            <div class="foot"><a class="btn solid" href="https://darkokostic95.github.io/kamen-apartments/">Open the site</a><span class="pill">Concept project</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="shots"><img src="img/gym-1.jpg" alt="Kovačnica gym home page" width="1200" height="900" loading="lazy"></div>
+          <div class="body">
+            <span class="kind">Strength gym · timetable and signups</span>
+            <h3>Kovačnica</h3>
+            <ul>
+              <li>Weekly class timetable with filters, highlighting today and the next class</li>
+              <li>Membership prices, coach profiles and "open now" status</li>
+              <li>Free first training signup form</li>
+            </ul>
+            <div class="foot"><a class="btn solid" href="https://darkokostic95.github.io/kovacnica-gym/">Open the site</a><span class="pill">Concept project</span></div>
+          </div>
+        </article>
+        <article class="case">
+          <div class="shots"><img src="img/bor-1.jpg" alt="Bor Lodge home page" width="1200" height="900" loading="lazy"></div>
+          <div class="body">
+            <span class="kind">Mountain hotel · rooms and packages</span>
+            <h3>Bor Lodge</h3>
+            <ul>
+              <li>"On the mountain today" board: snow, temperature, lifts and runs open</li>
+              <li>Rooms with winter and off-season prices, ski and spa packages</li>
+              <li>Stay request form with an instant price estimate</li>
+            </ul>
+            <div class="foot"><a class="btn solid" href="https://darkokostic95.github.io/bor-lodge/">Open the site</a><span class="pill">Concept project</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="head">
+        <h2>What you can order</h2>
+        <p>Fixed prices, agreed before any work starts. Hosting setup and connecting your domain are included.</p>
+      </div>
+      <div class="board">
+        <div class="svc"><h3>One-page website</h3><div class="price">$150 <small>from</small></div><ul><li>Services or menu, gallery, reviews</li><li>Opening hours, map, click-to-call</li><li>Ready in about 4 days</li></ul></div>
+        <div class="svc"><h3>Business website</h3><div class="price">$300 <small>from</small></div><ul><li>Up to 5 pages</li><li>Menu or price list with tabs</li><li>Contact or booking form</li></ul></div>
+        <div class="svc"><h3>Admin panel</h3><div class="price">$300 <small>from</small></div><ul><li>Edit prices, menus, photos, hours yourself</li><li>Bookings and orders in one place</li><li>Staff shifts and tasks</li></ul></div>
+        <div class="svc"><h3>Found on Google</h3><div class="price">Included</div><ul><li>Page titles and descriptions</li><li>Google Search Console</li><li>Google Business Profile link</li></ul></div>
+      </div>
+      <p class="fine">Short promo videos with titles and voice-over for your website and social media are available as an extra.</p>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="head"><h2>How it works</h2></div>
+      <div class="steps">
+        <div class="step"><h3>Tell me about your business</h3><p>Send your name, photos, menu or price list, and any site you like. I reply with a plan and a fixed price.</p></div>
+        <div class="step"><h3>Click through a preview</h3><p>Within a few days you get a private preview link to try on your phone and comment on.</p></div>
+        <div class="step"><h3>Launch on your domain</h3><p>I put it live, connect your domain, and show you how to update it. Changes in the first month are free.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap grid">
+      <div>
+        <h2>Who builds it</h2>
+        <p class="lead" style="margin-top:20px">DK Software is Darko Kostić, a software engineer from Niš, Serbia with 9 years of experience building large web systems for international companies.</p>
+        <p>You talk to the person who designs and builds your site, from the first message to launch. The same care that goes into big systems goes into your website: it loads fast, works on every phone, and is easy for you to keep up to date.</p>
+      </div>
+      <div class="facts"><dl>
+        <div><dt>Experience</dt><dd>Software Engineer since 2018</dd></div>
+        <div><dt>Certification</dt><dd>AWS Certified Cloud Practitioner (2024)</dd></div>
+        <div><dt>Education</dt><dd>Computer Science, Faculty of Applied Sciences, Niš</dd></div>
+        <div><dt>Languages</dt><dd>English, Serbian</dd></div>
+      </dl></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Tell me about your business.</h2>
+      <div class="links">
+        <a class="btn" href="https://www.upwork.com/freelancers/~01fcb256883c1a4938">Hire on Upwork <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="https://www.fiverr.com/dar_ko_stic">Order on Fiverr <span aria-hidden="true">↗</span></a>
+        <a class="btn" href="https://www.linkedin.com/in/darko-kostic/">Message on LinkedIn <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap"><span>© 2026 DK Software · Niš, Serbia</span><span>Concept projects use photos from Unsplash.</span></div>
+</footer>
+</body>
+</html>
